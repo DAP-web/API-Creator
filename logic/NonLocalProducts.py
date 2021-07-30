@@ -13,6 +13,15 @@ class NonlocalLogic(PybaLogic):
         if len(result) != 0:
             return result[0]
         else:
-            return {}    
+            return {}
+    # post
+    def getNonLocalProductByName(self, Name):
+        database = self.createDatabaseObj()
+        sql = f"SELECT * FROM helioapibd.nonlocalproducts where nombreProducto='{Name}';"
+        result = database.executeQuery(sql)
+        if len(result) != 0:
+            return result
+        else:
+            return []    
 
     
