@@ -26,4 +26,8 @@ class NonLocal(Resource):
         result = self.logic.getNonLocalProductByName(nonLocalCode)
         return result, 200
 
-    
+    def patch(self, id):
+        nonLocal = self.nonLocal_put_args.parse_args()
+        rows = self.logic.updateNonLocalProduct(id,nonLocal)
+        return {"rowsAffected": rows}
+
