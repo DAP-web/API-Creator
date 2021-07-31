@@ -24,5 +24,13 @@ class NonlocalLogic(PybaLogic):
         else:
             return []    
 
-
-    
+# patch
+    def updateNonLocalProduct(self, id, price, numberitems):
+        database = self.createDatabaseObj()
+        sql = (
+            f"UPDATE `helioapibd`.`nonlocalproducts` "
+            + f"SET `stock` = '{numberitems['stock']}'',"
+            + f"WHERE `ID` = {id};"
+        )
+        rows = database.executeNonQueryRows(sql)
+        return rows
