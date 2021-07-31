@@ -11,7 +11,7 @@ class NonlocalLogic(PybaLogic):
         sql = f"SELECT * FROM helioapibd.nonlocalproducts;"
         result = database.executeQuery(sql)
         if len(result) != 0:
-            return result[0]
+            return result
         else:
             return {}
     # post
