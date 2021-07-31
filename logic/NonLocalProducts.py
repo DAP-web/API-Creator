@@ -25,7 +25,7 @@ class NonlocalLogic(PybaLogic):
             return []    
 
 # patch
-    def updateNonLocalProduct(self, id, price, numberitems):
+    def updateNonLocalProduct(self, id, numberitems):
         database = self.createDatabaseObj()
         sql = (
             f"UPDATE `helioapibd`.`nonlocalproducts` "
