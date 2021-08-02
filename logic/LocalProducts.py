@@ -8,7 +8,7 @@ class localLogic(PybaLogic):
    # get
     def getLocalProduct(self):
         database = self.createDatabaseObj()
-        sql = f"SELECT * FROM helioapibd.localproducts;"
+        sql = f"SELECT * FROM localproducts;"
         result = database.executeQuery(sql)
         if len(result) != 0:
             return result
@@ -17,7 +17,7 @@ class localLogic(PybaLogic):
     # post
     def getLocalProductByID(self, id):
         database = self.createDatabaseObj()
-        sql = f"SELECT * FROM helioapibd.localproducts where idLocalProducts={id};"
+        sql = f"SELECT * FROM localproducts where idLocalProducts={id};"
         result = database.executeQuery(sql)
         if len(result) != 0:
             return result
@@ -28,7 +28,7 @@ class localLogic(PybaLogic):
     def updateLocalProduct(self, id, numberitems):
         database = self.createDatabaseObj()
         sql = (
-            f"UPDATE `helioapibd`.`localproducts` "
+            f"UPDATE `localproducts` "
             + f"SET `stock` = `stock` - '{numberitems['stock']}'"
             + f"WHERE `idLocalProducts` = {id};"
         )

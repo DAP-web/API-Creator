@@ -8,7 +8,7 @@ class NonlocalLogic(PybaLogic):
    # get
     def getNonLocalProduct(self):
         database = self.createDatabaseObj()
-        sql = f"SELECT * FROM helioapibd.nonlocalproducts;"
+        sql = f"SELECT * FROM nonlocalproducts;"
         result = database.executeQuery(sql)
         if len(result) != 0:
             return result
@@ -17,7 +17,7 @@ class NonlocalLogic(PybaLogic):
     # post
     def getNonLocalProductByID(self, id):
         database = self.createDatabaseObj()
-        sql = f"SELECT * FROM helioapibd.nonlocalproducts where idnonLocalProducts={id};"
+        sql = f"SELECT * FROM nonlocalproducts where idnonLocalProducts={id};"
         result = database.executeQuery(sql)
         if len(result) != 0:
             return result
@@ -28,7 +28,7 @@ class NonlocalLogic(PybaLogic):
     def updateNonLocalProduct(self, id, numberitems):
         database = self.createDatabaseObj()
         sql = (
-            f"UPDATE `helioapibd`.`nonlocalproducts` "
+            f"UPDATE `nonlocalproducts` "
             + f"SET `stock` = `stock` - '{numberitems['stock']}'"
             + f"WHERE `idnonLocalProducts` = {id};"
         )

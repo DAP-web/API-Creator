@@ -1,5 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `helioapibd` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `helioapibd`;
+
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
 -- Host: localhost    Database: helioapibd
